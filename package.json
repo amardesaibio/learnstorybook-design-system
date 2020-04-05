@@ -1,7 +1,7 @@
 {
   "name": "learnstorybook-design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,16 +14,21 @@
     "styled-components": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BABEL_ENV=production babel src -d dist",
+    "prepare": "npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "CHROMATIC_APP_CODE=fxf59ow9kgw chromatic"
+    "build-storybook-docs": "build-storybook -s public --docs",
+    "release": "auto shipit"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
   "browserslist": {
     "production": [
@@ -38,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.18",
@@ -47,7 +53,14 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
+    "auto": "^9.26.0",
+    "cross-env": "^7.0.2",
     "prettier": "^2.0.2",
     "storybook-chromatic": "^3.5.2"
-  }
+  },
+  "description": "Learn Storybook design system",
+  "main": "dist/index.js",
+  "repository": "https://github.com/amardesaibio/learnstorybook-design-system.git",
+  "author": "Amar Desai <amardesai16@gmail.com",
+  "license": "MIT"
 }
