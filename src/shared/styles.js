@@ -12,7 +12,7 @@ export const background = {
 export const color = {
   // Palette
   primary: '#FF4785', // coral
-  secondary: '#1EA7FD', // ocean
+  secondary: '#FFFFFF', // ocean
   tertiary: '#DDDDDD',
 
   orange: '#FC521F',
@@ -65,7 +65,7 @@ export const typography = {
     black: '900',
   },
   size: {
-    s1: '12',
+    s1: '15',
     s2: '14',
     s3: '16',
     m1: '20',
